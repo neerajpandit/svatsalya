@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>S VATSALYA ACADEMY</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static "assets/img/logo.png"%}" rel="icon">
+  {% comment %} <link href="{% static "assets/img/logo.png"%}" > {% endcomment %}
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  {% comment %} <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> {% endcomment %}
+  {% comment %} <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> {% endcomment %}
+  {% comment %} <link href="assets/vendor/aos/aos.css" rel="stylesheet"> {% endcomment %}
+  {% comment %} <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> {% endcomment %}
+  {% comment %} <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> {% endcomment %}
+
+
+  {% comment %} <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet"> {% endcomment %}
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  {% comment %} <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet"> {% endcomment %}
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static "assets/css/main.css" %}" rel="stylesheet">
+
+ 
+  
+
+</head>
+
+<body>
+
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+     
+      <a href="#" >
+       
+        <img src="{% static "assets/img/logo.png"%}" alt="" style="width: 70px; height: 70px;">
+        <!-- <h1>Yummy<span>.</span></h1> -->
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'Home' %}">Home</a></li>
+          <li class="dropdown"><a href="{% url 'About' %}"><span>About</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{% url 'About' %}">About the School</a></li>             
+              <li><a href="{% url 'Executive' %}">Executive Director Desk</a></li>
+              <li><a href="{% url 'Principle' %}">Principle Desk</a></li>
+              
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Admission</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{% url "Admission" %}">Admission Procedure</a></li>             
+              <li><a href="{% url "Fee" %}">Fee Details</a></li>             
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Examination</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{% url "examination" %}">Annual Report</a></li>             
+              <li><a href="{% url "examination" %}">Results</a></li>
+              <li><a href="{% url "examination" %}">Toppers</a></li>
+              <li><a href="{% url "examination" %}">Academic Calender</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Academic</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{% url "Academic" %}">Aim and Objective</a></li>             
+              <li><a href="{% url "Academic" %}">Uniform / School Timing</a></li>
+              <li><a href="{% url "Academic" %}">Parents-Teacher's Meeting</a></li>
+              
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Facilities</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{% url "Facility" %}">FAQ</a></li>             
+              <li><a href="{% url "Facility" %}">Transportation</a></li>
+              <li><a href="{% url "Facility" %}">Smart class and computer Lab</a></li>
+              
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Gallery and Videos</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{% url "Gallery" %}">Photo Gallery</a></li>             
+              <li><a href="#">Video Gallery</a></li>
+             </ul>
+          </li>
+         
+          <li><a href="{% url "Contact" %}">Contact Us</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      
+      {% if user.is_authenticated %}
+      <a class="btn-book-a-table" href="{% url "Logout" %}">Logout</a>
+            {% else %}
+            <a class="btn-book-a-table" href="{% url "Login" %}">Admin Login</a>
+            {% endif %}
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header>

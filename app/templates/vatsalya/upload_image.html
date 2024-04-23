@@ -1,0 +1,13 @@
+{% load static %}
+
+{% include "vatsalya/header.html" %}
+<br><br><br><br>
+<br>
+    <h2 style="text-align:center; ">Upload Image</h2>
+    <hr>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+{% include "vatsalya/footer.html" %}
