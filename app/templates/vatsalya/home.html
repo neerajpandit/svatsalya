@@ -45,6 +45,31 @@
   </section>
 
 {% include "vatsalya/whyus.html" %}
-{% include "vatsalya/gallery.html" %}
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>gallery</h2>
+          <p>Check <span>Our Gallery</span></p>
+        </div>
+
+        <div class="gallery-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-1.jpg"><img src="{% static "assets/img/a1.jpeg"%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-2.jpg"><img src="{% static "assets/img/a10.jpeg"%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-3.jpg"><img src="{% static "assets/img/a4.jpeg"%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-4.jpg"><img src="{% static "assets/img/a3.jpeg"%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-5.jpg"><img src="{% static "assets/img/a2.jpeg"%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-6.jpg"><img src="{% static "assets/img/a4.jpeg"%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-7.jpg"><img src="{% static "assets/img/a4.jpeg"%}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-8.jpg"><img src="{% static "assets/img/a1.jpeg"%}" class="img-fluid" alt=""></a></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Gallery Section -->
 {% include "vatsalya/contact.html" %}
 {% comment %} {% include "vatsalya/footer.html" %} {% endcomment %}
