@@ -64,31 +64,28 @@
             <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
     
             <div class="card bg-glass">
-              <div class="card-body px-4 py-5 px-md-5">
-                <form>
-                
-                <h2>Admin Login</h2>
-                  <!-- Email input -->
-                  <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" id="form3Example3" class="form-control" />
-                    <label class="form-label" for="form3Example3">Email address</label>
-                  </div>
-    
-                  <!-- Password input -->
-                  <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="password" id="form3Example4" class="form-control" />
-                    <label class="form-label" for="form3Example4">Password</label>
-                  </div>
-    
-                 
-    
-                  <!-- Submit button -->
+              <div class="card-body px-6 py-5 px-md-5">
+                <h1>Admin Login</h1>
+                <form method="post">
+                  {% csrf_token %}
+                  {{ form.as_p }}
                   <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
                     Login
                   </button>
-    
-                 
                 </form>
+                
+                {% comment %}
+                <br><br><br><br>
+                <h2>Login</h2>
+                {% if error_message %}
+                  <p>{{ error_message }}</p>
+                {% endif %}
+                <form method="post">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <button type="submit">Login</button>
+                </form>
+                {% endcomment %}
               </div>
             </div>
           </div>
@@ -98,15 +95,5 @@
     <!-- Section: Design Block -->
     
     
-    </main>
-{% comment %} <br><br><br><br>
-    <h2>Login</h2>
-    {% if error_message %}
-        <p>{{ error_message }}</p>
-    {% endif %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form> {% endcomment %}
+</main>
 {% include "vatsalya/footer.html" %}

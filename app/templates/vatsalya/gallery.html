@@ -51,47 +51,50 @@
             </div>
 
             <div class="row gy-5" >
-
+              {% for image in images %}
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/a1.jpeg" class="glightbox"><img src="{% static "assets/img/a1.jpeg"%}" class="menu-img img-fluid" alt=""></a>
-              
+                <div>         
+                  <a href="{{ image.image }}" class="glightbox"><img src="{{ image.image }}" alt="{{ image.title }}"class="menu-img img-fluid" alt=""></a>
+                </div>
+                
               </div>
+              {% endfor %}
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/a10.jpeg" class="glightbox"><img src="{% static "assets/img/a10.jpeg"%}" class="menu-img img-fluid" alt=""></a>
-              
-              </div>
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/a4.jpeg" class="glightbox"><img src="{% static "assets/img/a4.jpeg"%}" class="menu-img img-fluid" alt=""></a>
-              
-              </div>
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/a3.jpeg" class="glightbox"><img src="{% static "assets/img/a3.jpeg"%}" class="menu-img img-fluid" alt=""></a>
+                <a href="#" class="glightbox"><img src="{% static "assets/img/a10.jpeg"%}" class="menu-img img-fluid" alt=""></a>
               
               </div>
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/a2.jpeg" class="glightbox"><img src="{% static "assets/img/a2.jpeg"%}" class="menu-img img-fluid" alt=""></a>
-              
-              </div>
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/a1.jpeg" class="glightbox"><img src="{% static "assets/img/a1.jpeg"%}" class="menu-img img-fluid" alt=""></a>
+                <a href="#" class="glightbox"><img src="{% static "assets/img/a4.jpeg"%}" class="menu-img img-fluid" alt=""></a>
               
               </div>
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/a5.jpeg" class="glightbox"><img src="{% static "assets/img/a5.jpeg"%}" class="menu-img img-fluid" alt=""></a>
+                <a href="#" class="glightbox"><img src="{% static "assets/img/a3.jpeg"%}" class="menu-img img-fluid" alt=""></a>
               
               </div>
 
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/a7.jpeg" class="glightbox"><img src="{% static "assets/img/a7.jpeg"%}" class="menu-img img-fluid" alt=""></a>
+                <a href="#" class="glightbox"><img src="{% static "assets/img/a2.jpeg"%}" class="menu-img img-fluid" alt=""></a>
               
               </div>
               <div class="col-lg-4 menu-item">
-                <a href="assets/img/a9.jpeg" class="glightbox"><img src="{% static "assets/img/a9.jpeg"%}" class="menu-img img-fluid" alt=""></a>
+                <a href="#" class="glightbox"><img src="{% static "assets/img/a1.jpeg"%}" class="menu-img img-fluid" alt=""></a>
+              
+              </div>
+
+              <div class="col-lg-4 menu-item">
+                <a href="#" class="glightbox"><img src="{% static "assets/img/a5.jpeg"%}" class="menu-img img-fluid" alt=""></a>
+              
+              </div>
+
+              <div class="col-lg-4 menu-item">
+                <a href="#" class="glightbox"><img src="{% static "assets/img/a7.jpeg"%}" class="menu-img img-fluid" alt=""></a>
+              
+              </div>
+              <div class="col-lg-4 menu-item">
+                <a href="#" class="glightbox"><img src="{% static "assets/img/a9.jpeg"%}" class="menu-img img-fluid" alt=""></a>
               
               </div>
 
@@ -216,10 +219,6 @@
         </video>
     </a>
 </div>
-
-
-
-
             </div>
           </div>
 

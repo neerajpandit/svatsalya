@@ -110,6 +110,7 @@
 
       
       {% if user.is_authenticated %}
+      <a class="btn-book-a-table" href="{% url "Logout" %}">UploadImage</a>
       <a class="btn-book-a-table" href="{% url "Logout" %}">Logout</a>
             {% else %}
             <a class="btn-book-a-table" href="{% url "Login" %}">Admin Login</a>

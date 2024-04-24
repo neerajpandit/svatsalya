@@ -1,6 +1,119 @@
 {% load static %}
 
 {% include "vatsalya/header.html" %}
+<style>
+    /* Style for the form container */
+    .upload-form-container {
+        max-width: 400px;
+        margin: 10% auto; /* Added margin-top and margin-bottom */
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style for the form heading */
+    .form-heading {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Style for the form fields */
+    .form-field {
+        margin-bottom: 20px;
+    }
+
+    /* Style for the file input */
+    .file-input {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+        font-size: 16px;
+    }
+
+    /* Style for the upload button */
+    .upload-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    /* Hover effect for the upload button */
+    .upload-button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Popup message styles */
+    .popup-message {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #4caf50;
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+</style>
+
+<div class="upload-form-container">
+    <h2 class="form-heading">Upload Image</h2>
+    <hr>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-field">
+            {{ form.title.label_tag }}
+            {{ form.title }}
+        </div>
+        <div class="form-field">
+            {{ form.image.label_tag }}
+            {{ form.image }}
+        </div>
+        <button type="submit" class="upload-button">Upload</button>
+    </form>
+</div>
+
+<!-- Popup message -->
+<div id="popup-message" class="popup-message">
+    {% if message %}
+        {{ message }}
+    {% endif %}
+</div>
+
+{% include "vatsalya/footer.html" %}
+
+<!-- JavaScript to show popup message -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var message = "{{ message }}";
+        if (message) {
+            var popup = document.getElementById("popup-message");
+            popup.style.display = "block";
+            setTimeout(function() {
+                popup.style.display = "none";
+            }, 3000);  // Hide the popup message after 3 seconds
+        }
+    });
+</script>
+
+
+
+{% comment %} {% load static %}
+
+{% include "vatsalya/header.html" %}
 <br><br><br><br>
 <br>
     <h2 style="text-align:center; ">Upload Image</h2>
@@ -10,4 +123,4 @@
         {{ form.as_p }}
         <button type="submit">Upload</button>
     </form>
-{% include "vatsalya/footer.html" %}
+{% include "vatsalya/footer.html" %} {% endcomment %}
